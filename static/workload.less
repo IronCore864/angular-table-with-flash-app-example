@@ -1,0 +1,145 @@
+@nagel-blue: #072B52;
+@nagel-light-blue: #56b6e9;
+
+body {
+  margin: auto;
+}
+
+div.spinner-container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+table.workload-container {
+  border-collapse: collapse;
+  margin:auto;
+  margin-top: 20px;
+  text-align: left;
+  th, td {
+      text-align: left;
+      padding: 10px;
+  }
+  tr {
+    border-bottom: 1px solid black;
+  }
+  th {
+      background-color: @nagel-blue;
+      color: white;
+  }
+  td.lpar {
+    width: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    div.lpar-title {
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 5px;
+      color: @nagel-blue;
+    }
+    div.lpar-instances-container {
+      margin-left: 10px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      span.lpar-total-queue-num {
+        width: 25px;
+        display: inline-block;
+        text-align: right;
+        padding-right: 15px;
+      }
+      button.lpar-instance {
+        padding: 5px;
+        margin: 2px 0;
+        margin-right: 5px;
+        border: 1px solid @nagel-blue;
+        border-radius: 5px;
+        background-color: light-grey;
+        color: @nagel-blue;
+        width: 60px;
+      }
+      button.lpar-instance:hover {
+        background-color: @nagel-light-blue;
+      }
+      button.selected {
+        background-color: @nagel-blue !important;
+        color: white;
+      }
+      button.delayed {
+        background-color: red;
+        color: white;
+      }
+    }
+  }
+  td.lpar-data {
+    vertical-align: top;
+  }
+}
+
+table.lpar-data {
+  border-collapse: collapse;
+  text-align: left;
+  th {
+    background-color: @nagel-light-blue;
+    color: white;
+  }
+  th:hover {
+    cursor: pointer;
+  }
+  td {
+    color: @nagel-blue;
+    font-weight: bold;
+  }
+  tr {
+    border-bottom: 1px solid #ddd;
+  }
+  th, td {
+    padding: 5px;
+    width: 200px
+  }
+  td.partner-id {
+    text-overflow: ellipsis;
+  }
+  tbody:nth-child(even) {
+      background-color: #f2f2f2;
+  }
+  td.warning {
+    background-color: red;
+    color: white;
+  }
+  td.partner-detail-cell {
+    text-align: right;
+    color: black;
+    font-weight: normal;
+    padding-left: 0px;
+    padding-right: 0px;
+    table.partner-detail {
+      font-weight: normal;
+      color: black;
+      tr {
+        border: none;
+        color: black;
+        font-weight: normal;
+        th {
+          color: black;
+          font-weight: normal;
+        }
+        th, td {
+          width: 200px;
+        }
+        td {
+          color: black;
+          font-weight: normal;
+        }
+        td.application-id {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

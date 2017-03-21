@@ -1,0 +1,25 @@
+<div ng-show="$ctrl.status=='loading'" class="spinner-container">
+  <i class="fa fa-spinner fa-spin" style="font-size:50px"></i>
+</div>
+
+<div ng-show="$ctrl.status=='error'" class="spinner-container">
+Something went wrong...
+</div>
+
+<table ng-show="$ctrl.status=='ready'" class="workload-container">
+  <tr>
+    <th>LPAR</th>
+    <th>Data</th>
+  </tr>
+  <tr ng-repeat="(host, inst_list) in $ctrl.hostInst">
+    <td class="lpar">
+      <div class="lpar-title">{{host}}</div>
+      <div class="lpar-instances-container">
+        <div ng-repeat="instance in inst_list">
+          <button class="lpar-instance" ng-class="{delayed: $ctrl.delayedQueueExistsOnInstance(host_data.instances_data[instance]), selected: instance==$ctrl.selectedInstances[host_data.hostname]}" ng-click="$ctrl.showStatus(host_data.hostname, instance)">EDI{{instance}}</button>
+          <span class="lpar-total-queue-num">{{$ctrl.instQnum.instance}}</span>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>

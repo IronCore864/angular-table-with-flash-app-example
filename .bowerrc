@@ -1,0 +1,6 @@
+{
+  "proxy": "http://zscaler.proxy.int.kn:80",
+  "https-proxy":"http://zscaler.proxy.int.kn:80",
+  "directory": "static/bower_components",
+  "interactive": false
+}
